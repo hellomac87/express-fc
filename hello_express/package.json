@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon app.js",
-    "dev": "npx nodemon app.js"
+    "start": "npx nodemon -e js,html app.js",
+    "dev": "npx nodemon -e js,html app.js"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
   "description": "",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
   }
 }
