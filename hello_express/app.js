@@ -1,6 +1,7 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
 const logger = require("morgan");
+const bodyParser = require("body-parser"); // express internal module
 
 const app = express();
 const port = 3000;
@@ -15,6 +16,8 @@ nunjucks.configure(
 
 // 미들웨어 셋팅
 app.use(logger("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
   res.send("hello express");
