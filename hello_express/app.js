@@ -7,7 +7,7 @@ const port = 3000;
 nunjucks.configure(
   "template", // path
   {
-    autoescapte: true,
+    autoescape: true,
     express: app // express 객체
   }
 );
