@@ -7,9 +7,8 @@ app.get("/", (req, res) => {
   res.send("hello express");
 });
 
-app.get("/dobby", (req, res) => {
-  res.send("hello dobby!");
-});
+app.use("/admin", require("./routes/admin"));
+app.use("/contacts", require("./routes/contacts"));
 
 app.listen(port, () => {
   console.log("express listening on port", port);
