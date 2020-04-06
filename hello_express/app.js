@@ -38,6 +38,13 @@ function vipMiddleware(req, res, next) {
 app.use("/admin", vipMiddleware, require("./routes/admin"));
 app.use("/contacts", require("./routes/contacts"));
 
+app.use((req, res, _) => {
+  res.status(400).render("common/404.html");
+});
+app.use((req, res, _) => {
+  res.status(500).render("common/500.html");
+});
+
 app.listen(port, () => {
   console.log("express listening on port", port);
 });
